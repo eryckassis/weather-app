@@ -26,19 +26,19 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
       type="text"
       value={value}
       onChange={onChange}
-      placeholder="Pesquisar"
+      placeholder=""
       style={{
         flex: 1,
         border: "none",
         outline: "none",
         background: "transparent",
-        color: "#5ca16bff",
-        fontSize: 18,
+        color: "#f0ededff",
+        fontSize: 15,
         fontFamily: "monospace",
-        letterSpacing: 8,
+        letterSpacing: 0,
         padding: "6px 6px",
         borderRadius: 0,
-        boxShadow: "2px 3px 0 transparent",
+        boxShadow: "1px 3px 0 transparent",
         fontWeight: 100,
         textTransform: "uppercase",
       }}

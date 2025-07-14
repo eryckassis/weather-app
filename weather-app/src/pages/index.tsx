@@ -123,8 +123,8 @@ const HomePage = () => {
             : new Date().getMinutes().toString().padStart(2, "0")}
           <span
             style={{
-              fontSize: 32,
-              color: "#bbb",
+              fontSize: 0,
+              color: "#fffcfdff",
               marginLeft: 8,
             }}
           >
