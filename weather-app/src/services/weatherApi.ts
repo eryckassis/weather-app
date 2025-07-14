@@ -1,12 +1,9 @@
-const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
-const BASE_URL = "https://api.openweathermap.org/data/2.5";
+const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
+const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 export async function getWeatherByCity(city: string, lang = "pt_br") {
-  const response = await fetch(
-    `${BASE_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric&lang=${lang}`,
-  );
-  if (!response.ok) {
-    throw new Error("Não foi possível obter os dados do tempo");
-  }
+  const url = `${BASE_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric&lang=${lang}`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error("Erro ao buscar dados do clima");
   return response.json();
 }

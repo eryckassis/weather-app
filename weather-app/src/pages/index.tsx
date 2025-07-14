@@ -3,21 +3,27 @@ import SearchBar from "../components/SearchBar";
 import { getWeatherByCity } from "../services/weatherApi";
 
 const HomePage = () => {
-  const [city, setCity] = useState("Los Angeles");
+  const [city, setCity] = useState("São Paulo");
   const [search, setSearch] = useState("");
   const [weather, setWeather] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     setLoading(true);
+    setError(null);
     getWeatherByCity(city)
       .then(setWeather)
-      .catch(() => setWeather(null))
+      .catch(() => {
+        setWeather(null);
+        setError("Erro ao buscar dados do clima");
+      })
       .finally(() => setLoading(false));
   }, [city]);
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
+    console.log("Searching for:", search);
     if (search.trim()) {
       setCity(search.trim());
       setSearch("");
@@ -44,7 +50,9 @@ const HomePage = () => {
       {/* Barra de Pesquisa estilizada */}
       <SearchBar
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setSearch(e.target.value)
+        }
         onSubmit={handleSearch}
       />
 
@@ -59,7 +67,7 @@ const HomePage = () => {
           padding: "1rem 2rem",
         }}
       >
-        <span role="img" aria-label="clock" style={{ fontSize: 24 }}>
+        <span role="img" aria-label="clock" style={{ fontSize: 0 }}>
           🕒
         </span>
         <div>
@@ -69,7 +77,7 @@ const HomePage = () => {
               padding: "0.3em 1em",
               borderRadius: "20px",
               border: "none",
-              background: "#eee",
+              background: "#a2f0f0ff",
             }}
           >
             12h
@@ -79,8 +87,8 @@ const HomePage = () => {
               padding: "0.3em 1em",
               borderRadius: "20px",
               border: "none",
-              background: "#fff",
-              borderBottom: "2px solid #111",
+              background: "#a2f0f0ff",
+              borderBottom: "0px solid #111",
             }}
           >
             24h
@@ -98,7 +106,14 @@ const HomePage = () => {
         }}
       >
         {/* Clock */}
-        <div style={{ fontSize: 96, fontWeight: 700, lineHeight: 1 }}>
+        <div
+          style={{
+            fontSize: 96,
+            fontWeight: 700,
+            lineHeight: 1,
+            color: "#f7eff5ff",
+          }}
+        >
           {loading || !weather
             ? "--"
             : new Date().getHours().toString().padStart(2, "0")}
@@ -121,31 +136,43 @@ const HomePage = () => {
         {/* DateInfo */}
         <div
           style={{
-            fontSize: 24,
+            fontSize: 20,
             margin: "0.5em 0 1.5em 0",
+            color: "#eceee6ff",
           }}
         >
-          {new Date().toLocaleDateString("en-US", {
+          {new Date().toLocaleDateString("pt-br", {
             weekday: "short",
             day: "2-digit",
             month: "short",
           })}
         </div>
         {/* Location */}
-        <div style={{ fontSize: 28, fontWeight: 600, marginBottom: 8 }}>
+        <div
+          style={{
+            fontSize: 28,
+            fontWeight: 600,
+            marginBottom: 8,
+            color: "#f3f3f3ff",
+          }}
+        >
           {loading || !weather ? (
             "Carregando localização..."
-          ) : (
+          ) : error ? (
+            <span style={{ color: "red" }}>{error}</span>
+          ) : weather ? (
             <>
               {weather.name},<br />
               {weather.sys?.state ? weather.sys.state + "," : ""}
               <br />
               {weather.sys.country}
             </>
+          ) : (
+            "Localização não encontrada"
           )}
         </div>
         {/* SunInfo */}
-        <div style={{ fontSize: 16, color: "#444" }}>
+        <div style={{ fontSize: 0, color: "#444" }}>
           Sun{" "}
           <span role="img" aria-label="sun">
             ☀️
@@ -179,9 +206,9 @@ const HomePage = () => {
         </div>
         {/* Weather info */}
         {weather && (
-          <div style={{ marginTop: 16, fontSize: 18 }}>
-            <strong>Clima:</strong> {weather.weather[0].description} <br />
-            <strong>Temp:</strong> {weather.main.temp}°C
+          <div style={{ marginTop: 16, fontSize: 18, color: "#ffffffff" }}>
+            <strong></strong> {weather.weather[0].description} <br />
+            <strong></strong> {weather.main.temp}°C
           </div>
         )}
       </div>

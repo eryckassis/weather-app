@@ -1,23 +1,19 @@
 import React from "react";
 
-interface CitySearchBarProps {
+interface SearchBarProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (e: React.FormEvent) => void;
 }
 
-const CitySearchBar: React.FC<CitySearchBarProps> = ({
-  value,
-  onChange,
-  onSubmit,
-}) => (
+const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
   <form
     onSubmit={onSubmit}
     style={{
       display: "flex",
       alignItems: "center",
-      background: "#ffb6d5",
-      border: "4px solid #222",
+      background: "transparent",
+      border: "4px solid #1d1f1fff",
       borderRadius: 18,
       padding: "5px 5px 5px 5px",
       width: 320,
@@ -35,15 +31,15 @@ const CitySearchBar: React.FC<CitySearchBarProps> = ({
         flex: 1,
         border: "none",
         outline: "none",
-        background: "#ffffffff",
-        color: "#ff7ca4",
+        background: "transparent",
+        color: "#5ca16bff",
         fontSize: 18,
         fontFamily: "monospace",
-        letterSpacing: 10,
+        letterSpacing: 8,
         padding: "6px 6px",
-        borderRadius: 10,
-        boxShadow: "2px 3px 0 #ffb6d5ff",
-        fontWeight: 300,
+        borderRadius: 0,
+        boxShadow: "2px 3px 0 transparent",
+        fontWeight: 100,
         textTransform: "uppercase",
       }}
     />
@@ -102,4 +98,4 @@ const CitySearchBar: React.FC<CitySearchBarProps> = ({
   </form>
 );
 
-export default CitySearchBar;
+export default SearchBar;
