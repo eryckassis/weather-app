@@ -39,7 +39,7 @@ const HomePage = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundImage: "url('/images/dudububu.jpeg')",
+        backgroundImage: "url('/images/bubududupudu.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "#111",
@@ -79,9 +79,7 @@ const HomePage = () => {
               border: "none",
               background: "#a2f0f0ff",
             }}
-          >
-            12h
-          </button>
+          ></button>
           <button
             style={{
               padding: "0.3em 1em",
@@ -90,9 +88,7 @@ const HomePage = () => {
               background: "#a2f0f0ff",
               borderBottom: "0px solid #111",
             }}
-          >
-            24h
-          </button>
+          ></button>
         </div>
       </div>
 
@@ -111,7 +107,11 @@ const HomePage = () => {
             fontSize: 96,
             fontWeight: 700,
             lineHeight: 1,
-            color: "#f7eff5ff",
+            background: "linear-gradient(140deg, #ffffffff, #e969b0ff)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            color: "transparent",
           }}
         >
           {loading || !weather
@@ -136,9 +136,18 @@ const HomePage = () => {
         {/* DateInfo */}
         <div
           style={{
-            fontSize: 20,
-            margin: "0.5em 0 1.5em 0",
-            color: "#eceee6ff",
+            alignItems: "center",
+            display: "flex",
+            fontWeight: 600,
+            fontSize: 29,
+            marginLeft: 150,
+            marginTop: "-8rem",
+            padding: "2",
+            background: "linear-gradient(140deg, #ffffffff, #e969b0ff)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            color: "transparent",
           }}
         >
           {new Date().toLocaleDateString("pt-br", {
@@ -150,10 +159,15 @@ const HomePage = () => {
         {/* Location */}
         <div
           style={{
-            fontSize: 28,
-            fontWeight: 600,
-            marginBottom: 8,
-            color: "#f3f3f3ff",
+            fontSize: "50px",
+            fontWeight: 700,
+            marginBottom: 7,
+            marginRight: 150,
+            marginTop: "6rem",
+            background: "linear-gradient(140deg, #fcfcfcff, #e73b9aff)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
           }}
         >
           {loading || !weather ? (
@@ -164,7 +178,6 @@ const HomePage = () => {
             <>
               {weather.name},<br />
               {weather.sys?.state ? weather.sys.state + "," : ""}
-              <br />
               {weather.sys.country}
             </>
           ) : (
@@ -206,7 +219,18 @@ const HomePage = () => {
         </div>
         {/* Weather info */}
         {weather && (
-          <div style={{ marginTop: 16, fontSize: 18, color: "#ffffffff" }}>
+          <div
+            style={{
+              marginTop: 16,
+              fontSize: 30,
+              fontWeight: 700,
+              background: "linear-gradient(140deg, #ffffffff, #4cddf7ff)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
+          >
             <strong></strong> {weather.weather[0].description} <br />
             <strong></strong> {weather.main.temp}°C
           </div>

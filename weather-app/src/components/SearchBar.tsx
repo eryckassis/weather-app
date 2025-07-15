@@ -12,13 +12,17 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
     style={{
       display: "flex",
       alignItems: "center",
-      background: "transparent",
-      border: "4px solid #1d1f1fff",
-      borderRadius: 18,
-      padding: "5px 5px 5px 5px",
-      width: 320,
-      maxWidth: "92vw",
-      boxShadow: "1px 1px 0 #222",
+      background: "linear-gradient(140deg, #ffffffff, #4cddf7ff)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      backgroundClip: "text",
+      color: "transparent",
+      border: "4px solid #f0cce1ff",
+      borderRadius: 20,
+      padding: "0px 0px 0px 0px",
+      width: "100%",
+      maxWidth: "80vw",
+      boxShadow: "1px 1px 0 #efabf1ff",
       position: "relative",
     }}
   >
@@ -31,8 +35,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
         flex: 1,
         border: "none",
         outline: "none",
-        background: "transparent",
-        color: "#f0ededff",
+        background: "linear-gradient(140deg, #ffffffff, #4cddf7ff)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text",
+        color: "transparent",
         fontSize: 15,
         fontFamily: "monospace",
         letterSpacing: 0,
@@ -60,23 +67,28 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
       <span
         style={{
           display: "inline-block",
-          width: 32,
-          height: 32,
+          width: 20,
+          height: 20,
           borderRadius: "50%",
-          background: "#ffb6d5",
-          border: "3px solid #222",
+          background: "linear-gradient(140deg, #ffffffff, #4cddf7ff)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
+          color: "transparent",
+          border: "3px solid #3ee7f3ff",
           position: "relative",
+          right: 11,
         }}
       >
         {/* haste da lupa */}
         <span
           style={{
             position: "absolute",
-            bottom: 4,
+            bottom: 3,
             right: -7,
-            width: 10,
+            width: 20,
             height: 3,
-            background: "#222",
+            background: "#fd92f4ff",
             borderRadius: 2,
             transform: "rotate(45deg)",
           }}
@@ -85,10 +97,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
         <span
           style={{
             position: "absolute",
-            top: 5,
-            left: 5,
-            width: 18,
-            height: 18,
+            top: 2,
+            right: 3,
+            width: 15,
+            height: 15,
             borderRadius: "50%",
             background: "#ffdbe9",
           }}
