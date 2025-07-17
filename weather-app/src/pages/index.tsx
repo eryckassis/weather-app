@@ -23,7 +23,6 @@ const HomePage = () => {
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
-    console.log("Searching for:", search);
     if (search.trim()) {
       setCity(search.trim());
       setSearch("");
@@ -39,7 +38,7 @@ const HomePage = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundImage: "url('/images/bubududupudu.jpeg')",
+        backgroundImage: "url('/images/dudububuchuva.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "#111",
@@ -107,7 +106,7 @@ const HomePage = () => {
             fontSize: 96,
             fontWeight: 700,
             lineHeight: 1,
-            background: "linear-gradient(140deg, #ffffffff, #e969b0ff)",
+            background: "linear-gradient(140deg, #ffffffff, #ffffffff)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -143,7 +142,7 @@ const HomePage = () => {
             marginLeft: 150,
             marginTop: "-8rem",
             padding: "2",
-            background: "linear-gradient(140deg, #ffffffff, #e969b0ff)",
+            background: "linear-gradient(140deg, #ffffffff, #ffffffff)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -156,6 +155,26 @@ const HomePage = () => {
             month: "short",
           })}
         </div>
+        {/* Temperatura embaixo da data */}
+        {weather && (
+          <div
+            style={{
+              fontSize: 40,
+              fontWeight: 700,
+              marginTop: 8,
+              marginLeft: 60,
+              textAlign: "center",
+              background: "linear-gradient(150deg, #ffffffff, #ffffffff)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              color: "transparent",
+              width: "100%",
+            }}
+          >
+            {Math.round(weather.main.temp)}°C
+          </div>
+        )}
         {/* Location */}
         <div
           style={{
@@ -163,8 +182,8 @@ const HomePage = () => {
             fontWeight: 700,
             marginBottom: 7,
             marginRight: 150,
-            marginTop: "6rem",
-            background: "linear-gradient(140deg, #fcfcfcff, #e73b9aff)",
+            marginTop: "2rem",
+            background: "linear-gradient(140deg, #fcfcfcff, #ffffffff)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -195,7 +214,7 @@ const HomePage = () => {
             : (() => {
                 const sunrise = new Date(weather.sys.sunrise * 1000);
                 const sunset = new Date(weather.sys.sunset * 1000);
-                const diff = (weather.sys.sunset - weather.sys.sunrise) / 3600; // horas
+                const diff = (weather.sys.sunset - weather.sys.sunrise) / 3600;
                 const hours = Math.floor(diff);
                 const minutes = Math.round((diff - hours) * 60);
                 return `${hours}h ${minutes.toString().padStart(2, "0")}m`;
@@ -221,18 +240,17 @@ const HomePage = () => {
         {weather && (
           <div
             style={{
-              marginTop: 16,
+              marginTop: 100,
               fontSize: 30,
               fontWeight: 700,
-              background: "linear-gradient(140deg, #ffffffff, #4cddf7ff)",
+              background: "linear-gradient(130deg, #f8f0f0ff, #fffcfcff)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
               color: "transparent",
             }}
           >
-            <strong></strong> {weather.weather[0].description} <br />
-            <strong></strong> {weather.main.temp}°C
+            <strong></strong> {weather.weather[0].description}
           </div>
         )}
       </div>

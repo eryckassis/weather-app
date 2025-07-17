@@ -17,12 +17,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
       WebkitTextFillColor: "transparent",
       backgroundClip: "text",
       color: "transparent",
-      border: "4px solid #f0cce1ff",
+      border: "4px solid #faf7f9ff",
       borderRadius: 20,
       padding: "0px 0px 0px 0px",
       width: "100%",
       maxWidth: "80vw",
-      boxShadow: "1px 1px 0 #efabf1ff",
+      boxShadow: "1px 1px 0 #ccc7c7ff",
       position: "relative",
     }}
   >
@@ -70,12 +70,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
           width: 20,
           height: 20,
           borderRadius: "50%",
-          background: "linear-gradient(140deg, #ffffffff, #4cddf7ff)",
+          background: "linear-gradient(140deg, #ffffffff, #fffaf1ff)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           backgroundClip: "text",
           color: "transparent",
-          border: "3px solid #3ee7f3ff",
+          border: "3px solid #a5a4a1ff",
           position: "relative",
           right: 11,
         }}
@@ -88,7 +88,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
             right: -7,
             width: 20,
             height: 3,
-            background: "#fd92f4ff",
+            background: "#7a7873ff",
             borderRadius: 2,
             transform: "rotate(45deg)",
           }}
@@ -102,7 +102,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
             width: 15,
             height: 15,
             borderRadius: "50%",
-            background: "#ffdbe9",
+            background: "#ffffffff",
           }}
         />
       </span>
