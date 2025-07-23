@@ -1,11 +1,14 @@
 # Weather App
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-88%25-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-11%25-yellow?logo=javascript)
-](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-[![CSS](https://img.shields.io/badge/CSS-1%25-264de4?logo=css3)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+<p align="center">
+  <img src="https://img.shields.io/badge/TypeScript-88%25-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript Badge"/>
+  <img src="https://img.shields.io/badge/JavaScript-11%25-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Badge"/>
+  <img src="https://img.shields.io/badge/CSS-1%25-264DE4?style=for-the-badge&logo=css3&logoColor=white" alt="CSS Badge"/>
+</p>
 
-<img width="3831" height="2159" alt="Screenshot 2025-07-14 211054" src="https://github.com/user-attachments/assets/7457ab9c-3450-4324-8bad-191f1685b422" />
+
+<img width="1802" height="1899" alt="Screenshot 2025-07-22 220911" src="https://github.com/user-attachments/assets/1802d404-0c2c-441a-b046-08d720522c80" />
+
 
 
 ## Sobre o projeto
