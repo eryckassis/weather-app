@@ -35,7 +35,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
         flex: 1,
         border: "none",
         outline: "none",
-        background: "linear-gradient(140deg, #ffffffff, #4cddf7ff)",
+        background: "linear-gradient(140deg, #161515ff, #eff5f7ff)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         backgroundClip: "text",
