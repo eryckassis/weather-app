@@ -9,6 +9,7 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
   <form
     onSubmit={onSubmit}
+    aria-label="Pesquisar cidade"
     style={{
       display: "flex",
       alignItems: "center",
@@ -19,23 +20,25 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
       color: "transparent",
       border: "4px solid #faf7f9ff",
       borderRadius: 20,
-      padding: "0px 0px 0px 0px",
+      padding: 0,
       width: "100%",
       maxWidth: "80vw",
       boxShadow: "1px 1px 0 #ccc7c7ff",
       position: "relative",
+      top: "-5rem",
     }}
   >
     <input
       type="text"
       value={value}
       onChange={onChange}
-      placeholder=""
+      placeholder="Digite a cidade"
+      aria-label="Cidade"
       style={{
         flex: 1,
         border: "none",
         outline: "none",
-        background: "linear-gradient(140deg, #161515ff, #eff5f7ff)",
+        background: "linear-gradient(140deg, #ffffffff, #eff5f7ff)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         backgroundClip: "text",
@@ -50,9 +53,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
         textTransform: "uppercase",
       }}
     />
-    {/* Ícone de lupa estilizado */}
+
     <button
       type="submit"
+      aria-label="Pesquisar"
       style={{
         border: "none",
         background: "none",
@@ -62,7 +66,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
         alignItems: "center",
         padding: 0,
       }}
-      aria-label="Pesquisar"
     >
       <span
         style={{
@@ -80,7 +83,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
           right: 11,
         }}
       >
-        {/* haste da lupa */}
         <span
           style={{
             position: "absolute",
@@ -93,7 +95,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
             transform: "rotate(45deg)",
           }}
         />
-        {/* círculo rosa */}
+
         <span
           style={{
             position: "absolute",
@@ -110,4 +112,4 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, onSubmit }) => (
   </form>
 );
 
-export default SearchBar;
+export default React.memo(SearchBar);
